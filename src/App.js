@@ -1,25 +1,63 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import QuizStartScreen from './components/QuizStartScreen/QuizStartScreen';
+import QuizSelectionScreen from './components/QuizSelectionScreen/QuizSelectionScreen';
+import QuizScreen from './components/QuizScreen/QuizScreen';
+import QuizResultScreen from './components/QuizResultScreen/QuizResultScreen';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [userName, setUserName] = useState('');
+  const [selectedGenre, setSelectedGenre] = useState(null);
+  const [score, setScore] = useState(0);
+  const [currentScreen, setCurrentScreen] = useState('start');
+
+  const handleStart = (name) => {
+    setUserName(name);
+    setCurrentScreen('genreSelection');
+  };
+
+  const handleGenreSelect = (genre) => {
+    setSelectedGenre(genre);
+    setCurrentScreen('quiz');
+  };
+
+  const handleQuizFinish = (finalScore) => {
+    setScore(finalScore);
+    setCurrentScreen('result');
+  };
+
+  const handleRestart = () => {
+    setUserName('');
+    setSelectedGenre(null);
+    setScore(0);
+    setCurrentScreen('start');
+  };
+
+  const renderScreen = () => {
+    // もし現在start画面ならQuizStartScreenコンポーネントを表示し、onStartプロップスにhandeStart関数を渡す
+    if (currentScreen === 'start') {
+      return <QuizStartScreen onStart={handleStart} />;
+    }
+    // もし現在genreSelection画面ならQuizSelectionScreenコンポーネントを表示し、onSelectGenreプロップスにhandleGenreSelect関数を渡す
+    if (currentScreen === 'genreSelection') {
+      return <QuizSelectionScreen onSelectGenre={handleGenreSelect} />;
+    }
+    // もし現在quiz画面ならQuizScreenコンポーネントを表示し、userNmaeプロップスにuserNameの値、genreプロップスにselectedGenreの値、onFinishプロップスにhandleQuizFinish関数を渡す
+    if (currentScreen === 'quiz') {
+      return (
+        <QuizScreen
+          userName={userName}
+          genre={selectedGenre}
+          onFinish={handleQuizFinish}
+        />
+      );
+    }
+    if (currentScreen === 'result') {
+      return <QuizResultScreen userName={userName} score={score} onRestart={handleRestart} />;
+    }
+  };
+
+  return <div className="App-container">{renderScreen()}</div>;
 }
 
 export default App;
