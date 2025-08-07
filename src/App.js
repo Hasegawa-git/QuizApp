@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import QuizStartScreen from './components/QuizStartScreen/QuizStartScreen';
 import QuizSelectionScreen from './components/QuizSelectionScreen/QuizSelectionScreen';
@@ -58,6 +59,19 @@ function App() {
   };
 
   return <div className="App-container">{renderScreen()}</div>;
+=======
+import React from 'react'; // Reactをインポート
+import './App.css'; // App全体のCSSをインポート
+import Quiz from './components/Quiz'; // Quizコンポーネントをインポート
+
+function App() {
+  return (
+    <div className="App">
+      <h1>日本地理クイズ</h1> {/* アプリのタイトル */}
+      <Quiz /> {/* Quizコンポーネントを表示する */}
+    </div>
+  );
+>>>>>>> 37d5b90 (初期ファイルの作成)
 }
 
 export default App;

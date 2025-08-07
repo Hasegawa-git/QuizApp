@@ -1,0 +1,71 @@
+.quiz-container {
+  max-width: 600px; /* 横幅の最大値 */
+  margin: 50px auto; /* 上下に50px、左右は自動で中央寄せ */
+  padding: 20px; /* 内側の余白 */
+  border: 1px solid #ddd; /* 薄いグレーの枠線 */
+  border-radius: 8px; /* 角を少し丸くする */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影をつけて立体感を出す */
+  font-family: Arial, sans-serif; /* フォントの指定 */
+  background-color: #fff; /* 背景色を白に */
+}
+
+.question-section {
+  margin-bottom: 20px; /* 下に余白 */
+  text-align: center; /* テキストを中央寄せ */
+}
+
+.question-count {
+  font-size: 18px; /* フォントサイズ */
+  color: #777; /* 文字色をグレーに */
+  margin-bottom: 10px; /* 下に余白 */
+}
+
+.question-text {
+  font-size: 24px; /* フォントサイズを大きく */
+  font-weight: bold; /* 文字を太く */
+  color: #333; /* 文字色を濃いグレーに */
+}
+
+.answer-section {
+  display: flex; /* 要素を横並びにする（flexboxを使う） */
+  flex-direction: column; /* 横並びではなく縦に並べる（ボタンを縦に積む） */
+  gap: 10px; /* 要素間の隙間 */
+}
+
+.answer-section button {
+  background-color: #007bff; /* ボタンの背景色（青） */
+  color: white; /* 文字色を白に */
+  border: none; /* 枠線をなくす */
+  padding: 12px 20px; /* 内側の余白 */
+  border-radius: 5px; /* 角を少し丸くする */
+  font-size: 18px; /* フォントサイズ */
+  cursor: pointer; /* マウスカーソルを指の形に */
+  transition: background-color 0.3s ease; /* マウスを乗せた時の色の変化を滑らかにする */
+}
+
+.answer-section button:hover {
+  background-color: #0056b3; /* マウスを乗せた時の背景色（少し濃い青） */
+}
+
+.score-section {
+  text-align: center; /* テキストを中央寄せ */
+  font-size: 24px; /* フォントサイズを大きく */
+  font-weight: bold; /* 文字を太く */
+  color: #333; /* 文字色を濃いグレーに */
+}
+
+.score-section button {
+  background-color: #28a745; /* ボタンの背景色（緑） */
+  color: white; /* 文字色を白に */
+  border: none; /* 枠線をなくす */
+  padding: 10px 15px; /* 内側の余白 */
+  border-radius: 5px; /* 角を少し丸くする */
+  font-size: 16px; /* フォントサイズ */
+  cursor: pointer; /* マウスカーソルを指の形に */
+  margin-top: 20px; /* 上に余白 */
+  transition: background-color 0.3s ease; /* マウスを乗せた時の色の変化を滑らかにする */
+}
+
+.score-section button:hover {
+  background-color: #218838; /* マウスを乗せた時の背景色（少し濃い緑） */
+}
