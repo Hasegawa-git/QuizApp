@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* App.css */
 
 /* アプリ全体のコンテナ */
@@ -44,22 +43,4 @@ input[type="text"] {
     border: 1px solid #ccc;
     font-size: 16px;
     text-align: center;
-=======
-.App {
-  text-align: center; /* アプリ全体のコンテンツを中央寄せ */
-  background-color: #f0f2f5; /* 背景色を薄いグレーに */
-  min-height: 100vh; /* 画面の高さ全体を占めるようにする */
-  display: flex; /* Flexboxを適用 */
-  flex-direction: column; /* 要素を縦方向に並べる */
-  align-items: center; /* 縦方向の中央に揃える */
-  justify-content: center; /* 横方向の中央に揃える */
-  font-size: calc(10px + 2vmin); /* フォントサイズを画面サイズに合わせて調整 */
-  color: #333; /* 基本の文字色 */
-}
-
-h1 {
-  color: #333; /* タイトルの文字色 */
-  margin-bottom: 30px; /* 下に余白 */
-  font-size: 2.5em; /* タイトルのフォントサイズを大きく */
->>>>>>> 37d5b90 (初期ファイルの作成)
 }
